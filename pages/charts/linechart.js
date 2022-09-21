@@ -1,8 +1,11 @@
 import { Text } from "@chakra-ui/react";
+import LineChartComp from "../../components/charts/linechart";
+import { data } from "../../components/charts/linechart";
 
 const LineChart = () => {
+
     return(
-        <Text>This is LineChart Page</Text>
+        <LineChartComp data={data}/>
     )
 }
 

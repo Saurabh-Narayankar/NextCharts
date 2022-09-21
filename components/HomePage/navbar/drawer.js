@@ -39,7 +39,7 @@ const ChartsDrawer = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="md"
+        size='md'
       >
         <DrawerOverlay />
         <DrawerContent bgColor="gray.900">
@@ -53,6 +53,7 @@ const ChartsDrawer = () => {
           </Flex>
           <DrawerBody>
             <Flex flexDirection="column">
+            <Link href="/charts/linechart">
               <Button
                 marginBottom="3"
                 fontSize="2xl"
@@ -63,8 +64,8 @@ const ChartsDrawer = () => {
                 _hover={{ bgColor: "#35285E" }}
                 _active={{ bgColor: "#12092D" }}
               >
-                <Link href="/charts/linechart">Line-Chart</Link>
-              </Button>
+                Line-Chart
+              </Button></Link>
               <Button
                 marginBottom="3"
                 fontSize="2xl"
