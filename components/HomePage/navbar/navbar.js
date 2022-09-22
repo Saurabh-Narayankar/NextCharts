@@ -11,7 +11,8 @@ const Navbar = () => {
     <Box width="100%" bgColor="purple.500" borderBottom='1px solid #353535'>
       <Flex
         flexDirection="row"
-        padding="8"
+        px='8'
+        py='5'
         alignItems="center"
         justifyContent="space-between"
         backgroundColor='blackAlpha.900'
