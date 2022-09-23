@@ -6,7 +6,7 @@ import { Text, Flex } from "@chakra-ui/react";
 
 const LineChart = () => {
 
-    const [dyValues, setDyValues] = useState({ legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true  })
+    const [dyValues, setDyValues] = useState({ legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5 })
 
     const setValue = (attr, e) => {
         if (e.target) {
@@ -92,9 +92,9 @@ const LineChart = () => {
         <>
       <Flex
         height="65vh"
-        padding="10px"
+        padding="15px"
         width="100vw"
-        overflowX='scroll'
+        overflowX='auto'
         bgColor='black'
       >
         <Flex
@@ -121,20 +121,20 @@ const LineChart = () => {
             axisRight={null}
             axisBottom={dyValues.axisBottom ? {
                 orient: "bottom",
-                tickSize: 5,
-                tickPadding: 5,
+                tickSize: dyValues.TickSizeX,
+                tickPadding: dyValues.TickPaddingX,
                 tickRotation: 0,
                 legend:dyValues.legendXAxis,
-                legendOffset: 50,
+                legendOffset: 55,
                 legendPosition: "middle",
               } : null}
             axisLeft={dyValues.axisLeft ? {
                 orient: "left",
-                tickSize: 5,
-                tickPadding: 5,
+                tickSize: dyValues.TickSizeY,
+                tickPadding: dyValues.TickPaddingY,
                 tickRotation: 0,
                 legend: dyValues.legendYAxis,
-                legendOffset: -50,
+                legendOffset: -60,
                 legendPosition: "middle",
               } : null}
             enableGridX={dyValues.gridX}
@@ -149,6 +149,8 @@ const LineChart = () => {
             enableArea={true}
             areaBaselineValue={60}
             areaOpacity={0.25}
+
+            useMesh={true}
             legends={[
               {
                 anchor: "bottom-right",
