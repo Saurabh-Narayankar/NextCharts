@@ -24,7 +24,6 @@ const SliderComp = ({ title, sliderDefaultVal, sliderMinVal, sliderMaxVal, setVa
       <Flex  width="65%">
         <Flex
           flexDirection="column"
-          
           justifyContent="space-between"
           width="100%"
           
@@ -33,10 +32,11 @@ const SliderComp = ({ title, sliderDefaultVal, sliderMinVal, sliderMaxVal, setVa
             flexDirection="row"
             justifyContent="flex-start"
             alignItems="center"
+            gap='1.5rem'
             
             width="70%"
           >
-            <Text fontSize={["sm", "md", "lg", "xl"]} marginRight='1rem' marginBottom='10px' >{title}</Text>
+            <Text fontSize={["sm", "md", "lg", "xl"]} marginBottom='10px' >{title}</Text>
             <Tooltip
               hasArrow
               fontSize={["sm", "md"]}

@@ -13,8 +13,9 @@ import {
   TabPanel,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
-import SliderComp from "../customisation-Components/slider";
-import GridAndAxesComp from "../customisation-Components/grid-&-axes";
+import SliderComp from "../../customisation-Components/slider";
+import GridAndAxesComp from "../../customisation-Components/Grid&Axes-tab";
+import LineCustomisation from "./line-customisation";
 
 const LineChartFunctions = ({ setValue, setBooleanValue }) => {
 
@@ -52,20 +53,25 @@ const LineChartFunctions = ({ setValue, setBooleanValue }) => {
             <Text fontSize={["xs", "sm", "md", "lg", "xl"]}>Customisation</Text>
           </Tab>
         </TabList>
-        {/* TabList for Ingest Data */}
+        
         <TabPanels>
-          {/* initially mounted */}
+          {/* TabList for Ingest Data */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
             <p>one!</p>
           </TabPanel>
-          {/* initially not mounted */}
-          <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            {/* Grid and Axes Tab */}
-            <GridAndAxesComp  setValue={setValue} setBooleanValue={setBooleanValue} />                       
+          {/* End of TabList for Ingest Data */}
+
+          {/* TabList for Grid and Axes */}
+          <TabPanel bgColor="#140936" borderBottomRadius="8px">           
+            <GridAndAxesComp  setValue={setValue} setBooleanValue={setBooleanValue} />                         
           </TabPanel>
+          {/* End of TabList for Grid and Axes */}
+
+          {/* TabList for Customisation */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            <p>three!</p>
+            <LineCustomisation setValue={setValue} setBooleanValue={setBooleanValue} />
           </TabPanel>
+          {/* End of TabList for Customisation */}
         </TabPanels>
       </Tabs>
       <Box width="100%" bgColor="blackAlpha.900" paddingBottom="100px"></Box>

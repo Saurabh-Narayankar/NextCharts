@@ -17,16 +17,21 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
   const [showTooltipTickX, setShowTooltipTickX] = useState(false);
   const [sliderValuePaddingX, setSliderValuePaddingX] = useState(8);
   const [showTooltipPaddingX, setShowTooltipPaddingX] = useState(false);
+  const [sliderValueTickXRotation, setSliderValueTickXRotation] = useState(0);
+  const [showTooltipTickXRotation, setShowTooltipTickXRotation] = useState(false);
   const [sliderValueTickY, setSliderValueTickY] = useState(5);
   const [showTooltipTickY, setShowTooltipTickY] = useState(false);
   const [sliderValuePaddingY, setSliderValuePaddingY] = useState(5);
   const [showTooltipPaddingY, setShowTooltipPaddingY] = useState(false);
+  const [sliderValueTickYRotation, setSliderValueTickYRotation] = useState(0);
+  const [showTooltipTickYRotation, setShowTooltipTickYRotation] = useState(false);
 
   return (
     <>
       <Box bgColor="#140936" width="100%" height="3rem"></Box>
+      {/* SECTION 1 X-axis Tick Size Slider */}
       <SliderComp
-        title="X-axis TickSize"
+        title="X-axis Tick-Size"
         sliderDefaultVal={8}
         sliderMinVal={0}
         sliderMaxVal={25}
@@ -56,9 +61,25 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
       />
       {/* End of SECTION 2 X-axis Tick padding Slider */}
 
-      {/* SECTION 3 Y-axis Tick Size Slider */}
+      {/* SECTION 3 X-axis Tick Rotation Slider */}
       <SliderComp
-        title="Y-axis TickSize"
+        title="X-axis Tick-Rotation"
+        sliderDefaultVal={0}
+        sliderMinVal={-90}
+        sliderMaxVal={90}
+        setValueFor="TickRotationX"
+        setSliderValue={setSliderValueTickXRotation}
+        sliderValue={sliderValueTickXRotation}
+        setShowTooltip={setShowTooltipTickXRotation}
+        showTooltip={showTooltipTickXRotation}
+        toolTipLabel="Change tick rotation of the values on X-axis"
+        setValue={setValue}
+      />
+      {/* End of SECTION 3 X-axis Tick Rotation Slider */}
+
+      {/* SECTION 4 Y-axis Tick Size Slider */}
+      <SliderComp
+        title="Y-axis Tick-Size"
         sliderDefaultVal={5}
         sliderMinVal={0}
         sliderMaxVal={15}
@@ -70,11 +91,11 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
         toolTipLabel="Change tick Size of the values on Y-axis"
         setValue={setValue}
       />
-      {/* End of SECTION 3 Y-axis Tick Size Slider */}
+      {/* End of SECTION 4 Y-axis Tick Size Slider */}
 
-      {/* SECTION 4 Y-axis Tick padding Slider */}
+      {/* SECTION 5 Y-axis Tick padding Slider */}
       <SliderComp
-        title="Y-axis Padding"
+        title="Y-axis Tick Padding"
         sliderDefaultVal={5}
         sliderMinVal={0}
         sliderMaxVal={15}
@@ -86,7 +107,24 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
         toolTipLabel="Change tick padding of the values on Y-axis"
         setValue={setValue}
       />
-      {/* End of SECTION 4 Y-axis Tick padding Slider */}
+      {/* End of SECTION 5 Y-axis Tick padding Slider */}
+
+      {/* SECTION 3 X-axis Tick Rotation Slider */}
+      <SliderComp
+        title="Y-axis Tick-Rotation"
+        sliderDefaultVal={0}
+        sliderMinVal={-90}
+        sliderMaxVal={90}
+        setValueFor="TickRotationY"
+        setSliderValue={setSliderValueTickYRotation}
+        sliderValue={sliderValueTickYRotation}
+        setShowTooltip={setShowTooltipTickYRotation}
+        showTooltip={showTooltipTickYRotation}
+        toolTipLabel="Change tick Rotation of the values on Y-axis"
+        setValue={setValue}
+      />
+      {/* End of SECTION 3 X-axis Tick Rotation Slider */}
+
       {/* SECTION 5 of GRID and AXES i.e. Input section for X and Y axis */}
       <Flex
         width={width}
@@ -100,8 +138,9 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
           <Flex flexDirection="column" paddingRight="20px">
             <Flex
               flexDirection="row"
-              justifyContent="space-between"
+              justifyContent="flex-start"
               alignItems="center"
+              gap='1.5rem'
             >
               <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
                 Name for X-axis
@@ -135,8 +174,9 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
             <Flex flexDirection="column" paddingRight="20px">
               <Flex
                 flexDirection="row"
-                justifyContent="space-between"
+                justifyContent="flex-start"
                 alignItems="center"
+                gap='1.5rem'
               >
                 <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
                   Name for Y-axis
@@ -180,8 +220,9 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
           <Flex flexDirection="column" paddingRight="20px">
             <Flex
               flexDirection="row"
-              justifyContent="space-between"
+              justifyContent="flex-start"
               alignItems="center"
+              gap='1.5rem'
             >
               <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
                 GRID
@@ -224,8 +265,9 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
             <Flex flexDirection="column" marginRight="20px" paddingRight="20px">
               <Flex
                 flexDirection="row"
-                justifyContent="space-between"
+                justifyContent="flex-start"
                 alignItems="center"
+                gap='1.5rem'
               >
                 <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
                   AXES

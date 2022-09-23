@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
-import LineChartFunctions from "../../components/charts/linechartFunctions";
+import LineChartFunctions from "../../components/charts/linechart/linechartFunctions";
 import { Text, Flex } from "@chakra-ui/react";
 
 
 const LineChart = () => {
 
-    const [dyValues, setDyValues] = useState({ legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5 })
+    const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0 })
 
     const setValue = (attr, e) => {
         if (e.target) {
@@ -123,7 +123,7 @@ const LineChart = () => {
                 orient: "bottom",
                 tickSize: dyValues.TickSizeX,
                 tickPadding: dyValues.TickPaddingX,
-                tickRotation: 0,
+                tickRotation: dyValues.TickRotationX,
                 legend:dyValues.legendXAxis,
                 legendOffset: 55,
                 legendPosition: "middle",
@@ -132,14 +132,14 @@ const LineChart = () => {
                 orient: "left",
                 tickSize: dyValues.TickSizeY,
                 tickPadding: dyValues.TickPaddingY,
-                tickRotation: 0,
+                tickRotation: dyValues.TickRotationY,
                 legend: dyValues.legendYAxis,
                 legendOffset: -60,
                 legendPosition: "middle",
               } : null}
             enableGridX={dyValues.gridX}
             enableGridY={dyValues.gridY}
-            colors={{ scheme: 'nivo' }}
+            colors={{ scheme: dyValues.colors }}
             pointSize={9}
             pointColor={{ theme: 'background' }}
             pointBorderWidth={2}
