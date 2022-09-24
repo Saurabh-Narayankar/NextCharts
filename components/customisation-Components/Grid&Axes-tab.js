@@ -12,7 +12,7 @@ import SliderComp from "./slider";
 
 const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
 
-  const width = `65%`
+  const width = `40%`
   const [sliderValueTickX, setSliderValueTickX] = useState(8);
   const [showTooltipTickX, setShowTooltipTickX] = useState(false);
   const [sliderValuePaddingX, setSliderValuePaddingX] = useState(8);
@@ -130,11 +130,12 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
         width={width}
         paddingTop="1.5rem"
         flexDirection="row"
-        justifyContent="space-evenly"
+        justifyContent="space-between"
         flexWrap="wrap"
+        marginX="4rem"
       >
         {/* Input of name for X-axis */}
-        <Flex>
+        <Flex marginBottom="2rem">
           <Flex flexDirection="column" paddingRight="20px">
             <Flex
               flexDirection="row"
@@ -158,10 +159,8 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
             </Flex>
             <Input
               type="text"
-              fontSize="lg"
-              variant="filled"
+              fontSize="lg"    
               placeholder="Name along X axis"
-              marginBottom="2rem"
               marginRight="20px"
               onChange={(e) => setValue("legendXAxis", e)}
             />
@@ -169,7 +168,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
         </Flex>
         {/* End of Input of name for X-axis */}
         {/* Input of name for Y-axis */}
-        <Flex>
+        <Flex marginBottom="2rem">
           <Flex>
             <Flex flexDirection="column" paddingRight="20px">
               <Flex
@@ -195,9 +194,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
               <Input
                 type="text"
                 fontSize="lg"
-                variant="filled"
                 placeholder="Name along Y axis"
-                marginBottom="2rem"
                 marginRight="20px"
                 onChange={(e) => setValue("legendYAxis", e)}
               />
@@ -212,8 +209,9 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
       <Flex
         width={width}
         flexDirection="row"
-        justifyContent="space-evenly"
+        justifyContent="space-between"
         flexWrap="wrap"
+        marginX="4rem"
       >
         {/* Toggle for Grid X and Y Axis */}
         <Flex>

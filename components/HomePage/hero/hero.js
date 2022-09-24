@@ -29,8 +29,8 @@ const animation = `${animationKeyframes} 10s linear infinite`;
           paddingTop="100px"
           paddingBottom="6"  
           bgGradient={'linear(to-tr, #FF6FD8 19%, #3813C2 100%)'}
-          bgClip='text'
-          bgSize='500%'
+           bgClip='text'
+          bgSize='1000%'
           animation={animation}
           letterSpacing='wide'
           

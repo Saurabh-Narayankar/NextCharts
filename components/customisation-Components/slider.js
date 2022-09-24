@@ -11,14 +11,15 @@ import {
 
 const SliderComp = ({ title, sliderDefaultVal, sliderMinVal, sliderMaxVal, setValueFor, setSliderValue, sliderValue, setShowTooltip, showTooltip, toolTipLabel, setValue }) => {
 
-    const width = `65%`
+    const width = `60%`
 
   return (
     <Flex
       width={width}
       flexDirection="row"
-      justifyContent="space-around"
+      justifyContent="space-between"
       flexWrap="wrap"
+      marginX="4rem"
       
     >
       <Flex  width="65%">

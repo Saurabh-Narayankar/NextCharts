@@ -1,21 +1,16 @@
 import { useState } from "react";
 import {
-  Flex,
   Text,
   Box,
-  Input,
-  Tooltip,
-  Checkbox,
   Tabs,
   TabList,
   Tab,
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
-import { InfoIcon } from "@chakra-ui/icons";
-import SliderComp from "../../customisation-Components/slider";
 import GridAndAxesComp from "../../customisation-Components/Grid&Axes-tab";
-import LineCustomisation from "./line-customisation";
+import LinechartCustomisation from "./linechart-CustomisationTab";
+
 
 const LineChartFunctions = ({ setValue, setBooleanValue }) => {
 
@@ -69,11 +64,12 @@ const LineChartFunctions = ({ setValue, setBooleanValue }) => {
 
           {/* TabList for Customisation */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            <LineCustomisation setValue={setValue} setBooleanValue={setBooleanValue} />
+            <LinechartCustomisation setValue={setValue} setBooleanValue={setBooleanValue} />
           </TabPanel>
           {/* End of TabList for Customisation */}
         </TabPanels>
       </Tabs>
+      {/* Tabs for Data Injest, Grid and Axis and Customisation */}
       <Box width="100%" bgColor="blackAlpha.900" paddingBottom="100px"></Box>
     </Box>
   );

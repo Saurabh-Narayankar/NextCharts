@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
-import LineChartFunctions from "../../components/charts/linechart/linechartFunctions";
+import LineChartFunctions from "../../components/charts/linechart/linechart-Component";
 import { Text, Flex } from "@chakra-ui/react";
 
 
 const LineChart = () => {
 
-    const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0 })
+    const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0, lineWidth: 2, Area: false, areaOpacity: 0.20, points: false, pointSize: 10, pointBorderWidth: 2, pointLabel: false, pointLabelYOffset: -12 })
 
     const setValue = (attr, e) => {
         if (e.target) {
@@ -140,15 +140,17 @@ const LineChart = () => {
             enableGridX={dyValues.gridX}
             enableGridY={dyValues.gridY}
             colors={{ scheme: dyValues.colors }}
-            pointSize={9}
+            lineWidth={dyValues.lineWidth}
+            enablePoints={dyValues.points}
+            pointSize={dyValues.pointSize}
             pointColor={{ theme: 'background' }}
-            pointBorderWidth={2}
+            pointBorderWidth={dyValues.pointBorderWidth}
             pointBorderColor={{ from: 'serieColor' }}
-            enablePointLabel={false}
-            pointLabelYOffset={-12}
-            enableArea={true}
-            areaBaselineValue={60}
-            areaOpacity={0.25}
+            enablePointLabel={dyValues.pointLabel}
+            pointLabelYOffset={dyValues.pointLabelYOffset}
+            enableArea={dyValues.Area}
+            areaBaselineValue={0}
+            areaOpacity={dyValues.areaOpacity}
 
             useMesh={true}
             legends={[
