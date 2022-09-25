@@ -10,9 +10,10 @@ import {
 } from "@chakra-ui/react";
 import GridAndAxesComp from "../../customisation-Components/Grid&Axes-tab";
 import LinechartCustomisation from "./linechart-CustomisationTab";
+import LinechartData from "./linechart-IngestDataTab";
 
 
-const LineChartFunctions = ({ setValue, setBooleanValue }) => {
+const LineChartFunctions = ({ setValue, setBooleanValue, fieldNames, setFieldNames, fieldData, setFieldData, createData }) => {
 
   return (
     <Box width="100%" bgColor="blackAlpha.900">
@@ -52,7 +53,7 @@ const LineChartFunctions = ({ setValue, setBooleanValue }) => {
         <TabPanels>
           {/* TabList for Ingest Data */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            <p>one!</p>
+            <LinechartData fieldNames={fieldNames} setFieldNames={setFieldNames} fieldData={fieldData} setFieldData={setFieldData} createData={createData} />
           </TabPanel>
           {/* End of TabList for Ingest Data */}
 

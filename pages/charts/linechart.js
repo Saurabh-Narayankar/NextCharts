@@ -8,33 +8,12 @@ const LineChart = () => {
 
     const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0, lineWidth: 2, Area: false, areaOpacity: 0.20, points: false, pointSize: 10, pointBorderWidth: 2, pointLabel: false, pointLabelYOffset: -12 })
 
-    const setValue = (attr, e) => {
-        if (e.target) {
-          setDyValues({
-            ...dyValues,
-            [attr]: e.target.value,
-          });
-        } else {
-          setDyValues({
-            ...dyValues,
-            [attr]: e,
-          });
-        }
-      };
-
-    const setBooleanValue = (attr) => {
-        setDyValues({
-          ...dyValues,
-          [attr]: !dyValues[attr],
-        });
-      };
-    
-
-
-    const data = [
+    const [fieldNames, setFieldNames] = useState([''])
+    const [fieldData, setFieldData] = useState([])
+    const [data, setData] = useState(
+      [
         {
           id: "japan",
-          color: "hsl(184, 70%, 50%)",
           data: [
             {
               x: "plane",
@@ -86,7 +65,55 @@ const LineChart = () => {
             },
           ],
         },  
-      ];
+      ]
+    )
+
+    const setValue = (attr, e) => {
+        if (e.target) {
+          setDyValues({
+            ...dyValues,
+            [attr]: e.target.value,
+          });
+        } else {
+          setDyValues({
+            ...dyValues,
+            [attr]: e,
+          });
+        }
+      };
+
+    const setBooleanValue = (attr) => {
+        setDyValues({
+          ...dyValues,
+          [attr]: !dyValues[attr],
+        });
+      };
+
+    const createData = () => {
+      const fNames = fieldNames;
+      const fData = fieldData;
+    
+      const combinedData = [];
+      fNames.forEach((name, index) => {
+        const obj = {
+          id: name,
+          data: fData
+            .filter((data) => data.currentField === index)
+            .map((data) => {
+              return { x: data.x, y: data.y };
+            }),
+        };
+    
+        combinedData.push(obj);
+      });
+    
+        setData(combinedData);
+        console.log(combinedData);
+      };
+    console.log(data);
+    console.log(fieldData);
+    console.log(fieldNames);
+    
 
     return(
         <>
@@ -112,7 +139,7 @@ const LineChart = () => {
               type: "linear",
               min: "auto",
               max: "auto",
-              stacked: true,
+              stacked: false,
               reverse: false,
             }}
             yFormat=" >-.2f"
@@ -182,7 +209,7 @@ const LineChart = () => {
           />
         </Flex>
       </Flex>
-      <LineChartFunctions setValue={setValue} setDyValues={setDyValues} setBooleanValue={setBooleanValue} />
+      <LineChartFunctions setValue={setValue} setDyValues={setDyValues} setBooleanValue={setBooleanValue} fieldNames={fieldNames} setFieldNames={setFieldNames} fieldData={fieldData} setFieldData={setFieldData} createData={createData} />
     </>
     )
 }
