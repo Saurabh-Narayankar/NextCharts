@@ -8,8 +8,8 @@ const LineChart = () => {
 
     const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0, lineWidth: 2, Area: false, areaOpacity: 0.20, points: false, pointSize: 10, pointBorderWidth: 2, pointLabel: false, pointLabelYOffset: -12 })
 
-    const [fieldNames, setFieldNames] = useState([''])
-    const [fieldData, setFieldData] = useState([])
+    // const [fieldNames, setFieldNames] = useState([''])
+    const [finalData, setFinalData] = useState([{id: '', data: [{x: '', y: ''}]}])
     const [data, setData] = useState(
       [
         {
@@ -90,29 +90,8 @@ const LineChart = () => {
       };
 
     const createData = () => {
-      const fNames = fieldNames;
-      const fData = fieldData;
-    
-      const combinedData = [];
-      fNames.forEach((name, index) => {
-        const obj = {
-          id: name,
-          data: fData
-            .filter((data) => data.currentField === index)
-            .map((data) => {
-              return { x: data.x, y: data.y };
-            }),
-        };
-    
-        combinedData.push(obj);
-      });
-    
-        setData(combinedData);
-        console.log(combinedData);
+        setData(finalData);
       };
-    console.log(data);
-    console.log(fieldData);
-    console.log(fieldNames);
     
 
     return(
@@ -209,7 +188,7 @@ const LineChart = () => {
           />
         </Flex>
       </Flex>
-      <LineChartFunctions setValue={setValue} setDyValues={setDyValues} setBooleanValue={setBooleanValue} fieldNames={fieldNames} setFieldNames={setFieldNames} fieldData={fieldData} setFieldData={setFieldData} createData={createData} />
+      <LineChartFunctions setValue={setValue} setDyValues={setDyValues} setBooleanValue={setBooleanValue} createData={createData} setData={setData} finalData={finalData} setFinalData={setFinalData} />
     </>
     )
 }

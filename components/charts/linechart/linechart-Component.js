@@ -13,7 +13,7 @@ import LinechartCustomisation from "./linechart-CustomisationTab";
 import LinechartData from "./linechart-IngestDataTab";
 
 
-const LineChartFunctions = ({ setValue, setBooleanValue, fieldNames, setFieldNames, fieldData, setFieldData, createData }) => {
+const LineChartFunctions = ({ setValue, setBooleanValue, fieldNames, setFieldNames, fieldData, setFieldData, createData, setData, finalData, setFinalData }) => {
 
   return (
     <Box width="100%" bgColor="blackAlpha.900">
@@ -53,7 +53,7 @@ const LineChartFunctions = ({ setValue, setBooleanValue, fieldNames, setFieldNam
         <TabPanels>
           {/* TabList for Ingest Data */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            <LinechartData fieldNames={fieldNames} setFieldNames={setFieldNames} fieldData={fieldData} setFieldData={setFieldData} createData={createData} />
+            <LinechartData fieldNames={fieldNames} setFieldNames={setFieldNames} fieldData={fieldData} setFieldData={setFieldData} createData={createData} setData={setData} finalData={finalData} setFinalData={setFinalData}  />
           </TabPanel>
           {/* End of TabList for Ingest Data */}
 

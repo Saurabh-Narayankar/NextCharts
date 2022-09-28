@@ -37,7 +37,7 @@ const SliderComp = ({ title, sliderDefaultVal, sliderMinVal, sliderMaxVal, setVa
             
             width="70%"
           >
-            <Text fontSize={["sm", "md", "lg", "xl"]} marginBottom='10px' >{title}</Text>
+            <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg", "xl"]} marginBottom='10px' >{title}</Text>
             <Tooltip
               hasArrow
               fontSize={["sm", "md"]}

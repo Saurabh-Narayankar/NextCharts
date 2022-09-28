@@ -143,7 +143,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
               alignItems="center"
               gap='1.5rem'
             >
-              <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
+              <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg", "xl"]} marginBottom="10px">
                 Name for X-axis
               </Text>
               <Tooltip
@@ -177,7 +177,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
                 alignItems="center"
                 gap='1.5rem'
               >
-                <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
+                <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg", "xl"]} marginBottom="10px">
                   Name for Y-axis
                 </Text>
                 <Tooltip
@@ -222,7 +222,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
               alignItems="center"
               gap='1.5rem'
             >
-              <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
+              <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg", "xl"]} marginBottom="10px">
                 GRID
               </Text>
               <Tooltip
@@ -267,7 +267,7 @@ const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
                 alignItems="center"
                 gap='1.5rem'
               >
-                <Text fontSize={["sm", "md", "lg", "xl"]} paddingBottom="10px">
+                <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg", "xl"]} marginBottom="10px">
                   AXES
                 </Text>
                 <Tooltip

@@ -42,7 +42,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
               width="70%"
               paddingBottom="10px"
             >
-              <Text fontSize={["sm", "md", "lg"]}>Curve Type</Text>
+              <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Curve Type</Text>
               <Tooltip
                 hasArrow
                 fontSize="md"
@@ -101,7 +101,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
               width="70%"
               paddingBottom="10px"
             >
-              <Text fontSize={["sm", "md", "lg"]}>Colors</Text>
+              <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Colors</Text>
               <Tooltip
                 hasArrow
                 fontSize="md"
@@ -166,7 +166,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
               gap="1.5rem"
               paddingBottom="10px"
             >
-              <Text fontSize={["sm", "md", "lg"]}>Curve Line-Width</Text>
+              <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Curve Line-Width</Text>
               <Tooltip
                 hasArrow
                 fontSize="md"
@@ -213,7 +213,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
                 gap="1.5rem"
                 paddingBottom="10px"
               >
-                <Text fontSize={["sm", "md", "lg"]}>Area & Opacity</Text>
+                <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Area & Opacity</Text>
                 <Tooltip
                   hasArrow
                   fontSize="md"
@@ -285,7 +285,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
                 gap="1.5rem"
                 paddingBottom="10px"
               >
-                <Text fontSize={["sm", "md", "lg"]}>Curve Points</Text>
+                <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Curve Points</Text>
                 <Tooltip
                   hasArrow
                   fontSize="md"
@@ -375,7 +375,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
                 gap="1.5rem"
                 paddingBottom="10px"
               >
-                <Text fontSize={["sm", "md", "lg"]}>Point Label</Text>
+                <Text borderRadius='5px' paddingX='20px' bgColor='purple.500' fontSize={["sm", "md", "lg"]}>Point Label</Text>
                 <Tooltip
                   hasArrow
                   fontSize="md"
