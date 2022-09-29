@@ -8,7 +8,7 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
-import SliderComp from "./slider";
+import SliderComp from "../../customisation-Components/slider";
 
 const GridAndAxesComp = ({ setValue, setBooleanValue }) => {
 

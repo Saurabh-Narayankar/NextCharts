@@ -8,7 +8,6 @@ const LineChart = () => {
 
     const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0, lineWidth: 2, Area: false, areaOpacity: 0.20, points: false, pointSize: 10, pointBorderWidth: 2, pointLabel: false, pointLabelYOffset: -12 })
 
-    // const [fieldNames, setFieldNames] = useState([''])
     const [finalData, setFinalData] = useState([{id: '', data: [{x: '', y: ''}]}])
     const [data, setData] = useState(
       [
@@ -64,6 +63,60 @@ const LineChart = () => {
               y: 247,
             },
           ],
+        },
+        {
+          "id": "india",
+          "color": "hsl(297, 70%, 50%)",
+          "data": [
+            {
+              "x": "plane",
+              "y": 11
+            },
+            {
+              "x": "helicopter",
+              "y": 260
+            },
+            {
+              "x": "boat",
+              "y": 206
+            },
+            {
+              "x": "train",
+              "y": 43
+            },
+            {
+              "x": "subway",
+              "y": 15
+            },
+            {
+              "x": "bus",
+              "y": 287
+            },
+            {
+              "x": "car",
+              "y": 100
+            },
+            {
+              "x": "moto",
+              "y": 98
+            },
+            {
+              "x": "bicycle",
+              "y": 51
+            },
+            {
+              "x": "horse",
+              "y": 279
+            },
+            {
+              "x": "skateboard",
+              "y": 135
+            },
+            {
+              "x": "others",
+              "y": 264
+            }
+          ]
         },  
       ]
     )
@@ -188,7 +241,7 @@ const LineChart = () => {
           />
         </Flex>
       </Flex>
-      <LineChartFunctions setValue={setValue} setDyValues={setDyValues} setBooleanValue={setBooleanValue} createData={createData} setData={setData} finalData={finalData} setFinalData={setFinalData} />
+      <LineChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} createData={createData} finalData={finalData} setFinalData={setFinalData} />
     </>
     )
 }

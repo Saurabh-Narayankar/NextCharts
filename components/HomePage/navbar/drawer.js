@@ -66,7 +66,7 @@ const ChartsDrawer = () => {
               >
                 Line-Chart
               </Button></Link>
-              <Button
+              <Link href="/charts/funnelchart"><Button
                 marginBottom="3"
                 fontSize="2xl"
                 variant="ghost"
@@ -76,8 +76,8 @@ const ChartsDrawer = () => {
                 _hover={{ bgColor: "#35285E" }}
                 _active={{ bgColor: "#12092D" }}
               >
-                hello
-              </Button>
+                Funnel-Chart
+              </Button></Link>
               <Button
                 marginBottom="3"
                 fontSize="2xl"

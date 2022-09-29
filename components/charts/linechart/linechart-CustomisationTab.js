@@ -58,7 +58,6 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
               {/* Dropdown for Curve type */}
               <Select
                 color="gray"
-                placeholder="Curve type"
                 onChange={(e) => setValue("curve", e)}
               >
                 <option value="basis">Basis</option>
@@ -117,7 +116,6 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
               {/* Dropdown for Curve type */}
               <Select
                 color="gray"
-                placeholder="Colors"
                 onChange={(e) => setValue("colors", e)}
               >
                 <option value="nivo">Nivo</option>
