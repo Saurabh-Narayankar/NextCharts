@@ -55,9 +55,9 @@ const ChartsDrawer = () => {
             <Flex flexDirection="column">
             <Link href="/charts/linechart">
               <Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="2xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"
@@ -67,9 +67,9 @@ const ChartsDrawer = () => {
                 Line-Chart
               </Button></Link>
               <Link href="/charts/funnelchart"><Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="2xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"
@@ -79,9 +79,9 @@ const ChartsDrawer = () => {
                 Funnel-Chart
               </Button></Link>
               <Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="2xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"
@@ -91,9 +91,9 @@ const ChartsDrawer = () => {
                 hello
               </Button>
               <Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="2xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"
@@ -103,9 +103,9 @@ const ChartsDrawer = () => {
                 hello
               </Button>
               <Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="2xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"
@@ -115,9 +115,9 @@ const ChartsDrawer = () => {
                 hello
               </Button>
               <Button
-                marginBottom="3"
+                marginBottom="5"
                 fontSize="xl"
-                variant="ghost"
+                variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
                 color="white"

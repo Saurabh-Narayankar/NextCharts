@@ -13,7 +13,7 @@ import LinechartCustomisation from "./linechart-CustomisationTab";
 import LinechartData from "./linechart-IngestDataTab";
 
 
-const LineChartFunctions = ({ setValue, setBooleanValue, setData, finalData, setFinalData }) => {
+const LineChartFunctions = ({ setValue, setBooleanValue, createData, setData, finalData, setFinalData }) => {
 
   return (
     <Box width="100%" bgColor="blackAlpha.900">
@@ -27,7 +27,6 @@ const LineChartFunctions = ({ setValue, setBooleanValue, setData, finalData, set
         variant="enclosed"
         color="white"
         bgColor="blackAlpha.900"
-        isLazy
       >
         <TabList>
           <Tab
@@ -53,7 +52,7 @@ const LineChartFunctions = ({ setValue, setBooleanValue, setData, finalData, set
         <TabPanels>
           {/* TabList for Ingest Data */}
           <TabPanel bgColor="#140936" borderBottomRadius="8px">
-            <LinechartData setData={setData} finalData={finalData} setFinalData={setFinalData}  />
+            <LinechartData setData={setData} finalData={finalData} setFinalData={setFinalData} createData={createData}  />
           </TabPanel>
           {/* End of TabList for Ingest Data */}
 

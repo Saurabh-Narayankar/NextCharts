@@ -34,16 +34,16 @@ const Charts = () => {
               maxW="sm"
               fontSize="20"
               p="5"
-              borderWidth="2px"
+              borderWidth="4px"
               rounded="md"
               textAlign="left"
               color="white"
               _hover={{
                 cursor: "pointer",
-                bgColor: "whiteAlpha.900",
-                color: "black",
-                transition: "0.4s",
-                border: "2px solid purple",
+                bgColor: "blackAlpha.800",
+                color: "white",
+                transition: "0.3s",
+                border: "4px solid #553C9A",
               }}
             >
               <Heading textAlign="left" size="xl" my="3" color="purple.500">
@@ -54,44 +54,45 @@ const Charts = () => {
             </Box>
           </Link>
 
+          <Link href='/charts/funnelchart'>
           <Box
             as="article"
             maxW="sm"
             fontSize="20"
             p="5"
-            borderWidth="2px"
+            borderWidth="4px"
             rounded="md"
             textAlign="left"
             color="white"
             _hover={{
               cursor: "pointer",
-              bgColor: "white",
-              color: "black",
-              transition: "0.4s",
-              border: "2px solid purple",
+                bgColor: "blackAlpha.800",
+                color: "white",
+                transition: "0.3s",
+                border: "4px solid #553C9A",
             }}
           >
             <Heading textAlign="left" size="xl" my="3" color="purple.500">
-              Bar Chart <ArrowForwardIcon />
+              Funnel Chart <ArrowForwardIcon />
             </Heading>
-            For side by side comparison of how multiple parameters correlate can
-            be better visualised with a bar chart.
+            A funnel chart helps you visualize a linear process that has continuous, connected stages.
           </Box>
+          </Link>
           <Box
             as="article"
             maxW="sm"
             fontSize="20"
             p="5"
-            borderWidth="2px"
+            borderWidth="4px"
             rounded="md"
             textAlign="left"
             color="white"
             _hover={{
               cursor: "pointer",
-              bgColor: "white",
-              color: "black",
-              transition: "0.4s",
-              border: "2px solid purple",
+                bgColor: "blackAlpha.800",
+                color: "white",
+                transition: "0.3s",
+                border: "4px solid #553C9A",
             }}
           >
             <Heading textAlign="left" size="xl" my="3" color="purple.500">

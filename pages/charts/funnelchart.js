@@ -9,8 +9,8 @@ const FunnelChart = () => {
 
   const [dyValues, setDyValues] = useState({colors: 'spectral', spacing: 0, shape: 0.66, opacity: 1, borderWidth: 6, label: true, chartInterpolation: 'smooth', chartDirection: 'vertical'})
 
-  const [finalData, setFinalData] = useState([])
-  const data = [
+  const [finalData, setFinalData] = useState([{id: '', value: '', label: ''}])
+  const [data, setData] = useState([
     {
       id: "Sent",
       value: 82788,
@@ -36,7 +36,7 @@ const FunnelChart = () => {
       value: 19078,
       label: "Purchased",
     },
-  ];
+  ])
 
 
   const setValue = (attr, e) => {
@@ -53,13 +53,10 @@ const FunnelChart = () => {
     }
   };
 
-const setBooleanValue = (attr) => {
-    setDyValues({
-      ...dyValues,
-      [attr]: !dyValues[attr],
-    });
+  
+  const createData = () => {
+    setData(finalData);
   };
-
 
   
 
@@ -105,9 +102,10 @@ const setBooleanValue = (attr) => {
           />
         </Flex>
       </Flex>
-      <FunnelChartFunctions setDyValues={setDyValues} setValue={setValue} />
+      <FunnelChartFunctions setData={setData} setValue={setValue} createData={createData} finalData={finalData} setFinalData={setFinalData} />
     </>
   );
 };
 
 export default FunnelChart;
+

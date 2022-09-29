@@ -19,7 +19,7 @@ const Navbar = () => {
       >
         <Link href='/'><Text
           marginRight="5"
-          fontSize={["26px", "24px", "35px", "45px", "55px"]}
+          fontSize={["26px", "24px", "35px", "45px", '50px']}
           fontWeight="bold"
           color='white'
           _hover={{ cursor: 'pointer'}}

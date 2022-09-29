@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Flex,
   Box,
@@ -17,10 +16,6 @@ import {
 import { InfoIcon } from "@chakra-ui/icons";
 
 const LinechartData = ({
-  fieldNames,
-  setFieldNames,
-  fieldData,
-  setFieldData,
   createData,
   setData,
   finalData,
@@ -82,8 +77,7 @@ const LinechartData = ({
         ],
       },
     ]);
-    setFieldNames([""]);
-    setFieldData([]);
+    setFinalData({id: '', data: [{x: '', y: ''}]})
   };
 
 
