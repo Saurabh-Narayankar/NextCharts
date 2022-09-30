@@ -39,24 +39,25 @@ const ChartsDrawer = () => {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size='md'
+        size='sm'
       >
         <DrawerOverlay />
         <DrawerContent bgColor="gray.900">
           <Flex>
-            <HStack>
+            <HStack marginBottom="5">
               <DrawerCloseButton size="lg" paddingTop="9" color="white" />
-              <DrawerHeader fontSize="4xl" marginBottom="5" textColor="white">
+              <DrawerHeader fontSize="4xl" textColor="white">
                 CHARTS
               </DrawerHeader>
             </HStack>
           </Flex>
           <DrawerBody>
+            
             <Flex flexDirection="column">
             <Link href="/charts/linechart">
               <Button
                 marginBottom="5"
-                fontSize="2xl"
+                fontSize="xl"
                 variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
@@ -68,7 +69,7 @@ const ChartsDrawer = () => {
               </Button></Link>
               <Link href="/charts/funnelchart"><Button
                 marginBottom="5"
-                fontSize="2xl"
+                fontSize="xl"
                 variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
@@ -78,9 +79,21 @@ const ChartsDrawer = () => {
               >
                 Funnel-Chart
               </Button></Link>
+              <Link href="/charts/areabumpchart"><Button
+                marginBottom="5"
+                fontSize="xl"
+                variant="outline"
+                paddingTop="7"
+                paddingBottom="7"
+                color="white"
+                _hover={{ bgColor: "#35285E" }}
+                _active={{ bgColor: "#12092D" }}
+              >
+                AreaBump-Chart
+              </Button></Link>
               <Button
                 marginBottom="5"
-                fontSize="2xl"
+                fontSize="xl"
                 variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
@@ -92,19 +105,7 @@ const ChartsDrawer = () => {
               </Button>
               <Button
                 marginBottom="5"
-                fontSize="2xl"
-                variant="outline"
-                paddingTop="7"
-                paddingBottom="7"
-                color="white"
-                _hover={{ bgColor: "#35285E" }}
-                _active={{ bgColor: "#12092D" }}
-              >
-                hello
-              </Button>
-              <Button
-                marginBottom="5"
-                fontSize="2xl"
+                fontSize="xl"
                 variant="outline"
                 paddingTop="7"
                 paddingBottom="7"
@@ -127,6 +128,7 @@ const ChartsDrawer = () => {
                 hello
               </Button>
             </Flex>
+            
           </DrawerBody>
         </DrawerContent>
       </Drawer>

@@ -64,10 +64,10 @@ const FunnelChartFunctions = ({ setValue, setData, createData, finalData, setFin
       <Box width="100%" paddingBottom="20px" bgColor="blackAlpha.900"></Box>
       <Tabs isFitted
         mx='8'
-        variant="enclosed"
+        variant="enclosed-colored"
         color="white"
         bgColor="blackAlpha.900">
-        <TabList>
+        <TabList border='2px solid #593AA5'>
           <Tab bgColor="#09021E"
             _selected={{ bgGradient: "linear(to-b, purple.900, #140936)" }}>
                 <Text fontSize={["xs", "sm", "md", "lg", "xl"]}>Ingest Data</Text>
@@ -105,7 +105,6 @@ const FunnelChartFunctions = ({ setValue, setData, createData, finalData, setFin
                       alignItems="center"
                       gap="1.5rem"
                       px="20px"
-                      border='3px solid purple'
                       borderRadius="5px"
                       bgColor="purple.500"
                     >

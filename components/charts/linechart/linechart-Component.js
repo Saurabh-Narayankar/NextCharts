@@ -24,11 +24,11 @@ const LineChartFunctions = ({ setValue, setBooleanValue, createData, setData, fi
       <Tabs
         isFitted
         mx='8'
-        variant="enclosed"
+        variant='enclosed-colored'
         color="white"
         bgColor="blackAlpha.900"
       >
-        <TabList>
+        <TabList border='2px solid #593AA5'>
           <Tab
             bgColor="#09021E"
             _selected={{ bgGradient: "linear(to-b, purple.900, #140936)" }}

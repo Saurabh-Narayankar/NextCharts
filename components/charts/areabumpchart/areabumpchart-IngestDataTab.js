@@ -1,83 +1,85 @@
 import {
-  Flex,
-  Box,
-  FormControl,
-  Input,
-  Button,
   Text,
+  Box,
+  Flex,
+  FormControl,
+  Tooltip,
+  Input,
   Table,
   Thead,
-  Tbody,
   Tr,
   Th,
+  Tbody,
   Td,
-  Tooltip,
+  Button,
+  Highlight,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
 
-const LinechartData = ({
-  createData,
-  setData,
-  finalData,
-  setFinalData,
-}) => {
+const BumpChartData = ({ createData, finalData, setFinalData, setData }) => {
+  
   const removeData = () => {
     setData([
       {
-        id: "japan",
+        id: "JavaScript",
         data: [
           {
-            x: "plane",
-            y: 76,
+            x: 2000,
+            y: 17,
           },
           {
-            x: "helicopter",
-            y: 74,
+            x: 2001,
+            y: 15,
           },
           {
-            x: "boat",
-            y: 164,
+            x: 2002,
+            y: 18,
           },
           {
-            x: "train",
-            y: 3,
+            x: 2003,
+            y: 24,
           },
           {
-            x: "subway",
-            y: 6,
+            x: 2004,
+            y: 25,
           },
           {
-            x: "bus",
-            y: 55,
+            x: 2005,
+            y: 16,
+          },
+        ],
+      },
+      {
+        id: "ReasonML",
+        data: [
+          {
+            x: 2000,
+            y: 25,
           },
           {
-            x: "car",
-            y: 232,
+            x: 2001,
+            y: 21,
           },
           {
-            x: "moto",
-            y: 161,
+            x: 2002,
+            y: 18,
           },
           {
-            x: "bicycle",
-            y: 119,
-          },
-          {
-            x: "horse",
-            y: 128,
-          },
-          {
-            x: "skateboard",
+            x: 2003,
             y: 12,
           },
           {
-            x: "others",
-            y: 247,
+            x: 2004,
+            y: 17,
+          },
+          {
+            x: 2005,
+            y: 22,
           },
         ],
       },
     ]);
-    setFinalData({id: '', data: [{x: '', y: ''}]})
+    setFinalData([{ id: "", data: [{ x: null, y: null }]}])
   };
 
 
@@ -85,6 +87,7 @@ const LinechartData = ({
     <>
       <Box bgColor="#140936" width="100%" height="3rem"></Box>
       <Flex width="39%" marginLeft="4rem" flexDir="column" gap="70px">
+      <Text fontSize={["sm", "md", "lg", "xl"]}><Highlight query='NOTE' styles={{ px: '2', py: '1', bg: 'red' , color:'white', borderRadius: '7px' }}>NOTE :</Highlight>   Use Areabump chart only if the X and Y Co-ordinates are <b>numbers</b>, Otherwise use Bump chart</Text>
         <Flex width="100%" justifyContent="space-between">
           <Flex width="100%" justifyContent="center">
             <FormControl>
@@ -142,12 +145,12 @@ const LinechartData = ({
                                 ? { ...singleData, id: e.target.value }
                                 : singleData
                             )
-                          )
+                          );
                         }}
                       />
                       <Flex width="700px" flexDir="column" gap="5">
                         <Flex gap="10">
-                          <Table marginBottom='10px' variant="simple" size="sm">
+                          <Table marginBottom="10px" variant="simple" size="sm">
                             <Thead>
                               <Tr>
                                 <Th>
@@ -180,14 +183,18 @@ const LinechartData = ({
                                                   ? {
                                                       ...singleData,
                                                       data: singleData.data.map(
-                                                        (input, inputChangeIndexForX) => 
-                                                          inputIndex === inputChangeIndexForX ?
-                                                           {
-                                                            ...input,
-                                                            x: e.target.value,
-                                                          } 
-                                                          : {...input}
-                                                      
+                                                        (
+                                                          input,
+                                                          inputChangeIndexForX
+                                                        ) =>
+                                                          inputIndex ===
+                                                          inputChangeIndexForX
+                                                            ? {
+                                                                ...input,
+                                                                x: Number(e.target
+                                                                    .value),
+                                                              }
+                                                            : { ...input }
                                                       ),
                                                     }
                                                   : { ...singleData }
@@ -207,20 +214,23 @@ const LinechartData = ({
                                                   ? {
                                                       ...singleData,
                                                       data: singleData.data.map(
-                                                        (input, inputChangeIndexForY) => 
-                                                          inputIndex === inputChangeIndexForY ?
-                                                           {
-                                                            ...input,
-                                                            y: e.target.value,
-                                                          } 
-                                                          : {...input}
-                                                      
+                                                        (
+                                                          input,
+                                                          inputChangeIndexForY
+                                                        ) =>
+                                                          inputIndex ===
+                                                          inputChangeIndexForY
+                                                            ? {
+                                                                ...input,
+                                                                y: Number(e.target
+                                                                    .value),
+                                                              }
+                                                            : { ...input }
                                                       ),
                                                     }
                                                   : { ...singleData }
                                             )
                                           );
-                                          
                                         }}
                                       />
                                     </Td>
@@ -248,7 +258,7 @@ const LinechartData = ({
                                     ...singleData,
                                     data: [
                                       ...singleData.data,
-                                      { x: "", y: "" },
+                                      { x: null, y: null },
                                     ],
                                   }
                                 : singleData
@@ -259,9 +269,7 @@ const LinechartData = ({
                         Add Row
                       </Button>
                     </Flex>
-
                   </Flex>
-                  
                 );
               })}
               <Button
@@ -274,7 +282,10 @@ const LinechartData = ({
                   border: "1px solid purple",
                 }}
                 onClick={() => {
-                  setFinalData([...finalData, { id: null, data: [{x: '', y: ''}] }]);
+                  setFinalData([
+                    ...finalData,
+                    { id: null, data: [{ x: null, y: null }] },
+                  ]);
                 }}
               >
                 Add Line
@@ -289,7 +300,6 @@ const LinechartData = ({
             colorScheme="purple"
             variant="solid"
             onClick={createData}
-            isFullWidth
           >
             Insert Data
           </Button>
@@ -299,7 +309,6 @@ const LinechartData = ({
             colorScheme="red"
             variant="solid"
             onClick={removeData}
-            isFullWidth
           >
             Remove Data
           </Button>
@@ -309,4 +318,4 @@ const LinechartData = ({
   );
 };
 
-export default LinechartData;
+export default BumpChartData;
