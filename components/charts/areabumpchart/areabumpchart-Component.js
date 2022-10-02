@@ -1,4 +1,5 @@
 import { Text, Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import AreaBumpCustomisation from "./areabumpchart-CustomisationTab";
 import AreaBumpGridAndAxes from "./areabumpchart-GridAndAxesTab";
 import BumpChartData from "./areabumpchart-IngestDataTab";
 
@@ -52,7 +53,7 @@ const BumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, 
   
             {/* TabList for Customisation */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">
-              <Text>three</Text>
+              <AreaBumpCustomisation setValue={setValue} />
             </TabPanel>
             {/* End of TabList for Customisation */}
           </TabPanels>

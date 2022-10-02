@@ -5,7 +5,7 @@ import BumpChartFunctions from '../../components/charts/areabumpchart/areabumpch
 
 const AreaBumpChart = () => {
 
-    const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: ''})
+    const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', spacing: 0, xPadding: 0.6, interpolation: 'smooth', colors: 'nivo', fieldOpacity: 0.8, borderWidth: 1, borderOpacity: 1,})
     const [finalData, setFinalData] = useState([{id: '', data: [{x: null, y: null}]}])
     const [data, setData] = useState([
         {
@@ -117,10 +117,12 @@ const AreaBumpChart = () => {
         data={data}
         theme={{textColor: "#ffffff"}}
         margin={{ top: 40, right: 100, bottom: 40, left: 100 }}
-        spacing={32}
-        colors={{ scheme: 'nivo' }}
+        spacing={dyValues.spacing}
+        colors={{ scheme: dyValues.colors }}
+        xPadding={dyValues.xPadding}
         blendMode="lighten"
-        fillOpacity={0.8}
+        interpolation={dyValues.interpolation}
+        fillOpacity={dyValues.fieldOpacity}
         inactiveFillOpacity={0}
         startLabel="id"
         startLabelTextColor={{
@@ -142,7 +144,8 @@ const AreaBumpChart = () => {
                 ]
             ]
         }}
-        borderWidth={2}
+        borderWidth={dyValues.borderWidth}
+        borderOpacity={dyValues.borderOpacity}
         borderColor={{
             from: 'color',
             modifiers: [
