@@ -15,117 +15,79 @@ import {
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
 
-const LinechartData = ({ createData, setData, finalData, setFinalData }) => {
+const RadialBarChartData = ({
+  createData,
+  setData,
+  finalData,
+  setFinalData,
+}) => {
   const removeData = () => {
     setData([
       {
-        id: "japan",
+        id: "Supermarket",
         data: [
           {
-            x: "plane",
-            y: 76,
+            x: "Vegetables",
+            y: 295,
           },
           {
-            x: "helicopter",
-            y: 74,
+            x: "Fruits",
+            y: 231,
           },
           {
-            x: "boat",
-            y: 164,
+            x: "Meat",
+            y: 157,
           },
           {
-            x: "train",
-            y: 3,
-          },
-          {
-            x: "subway",
-            y: 6,
-          },
-          {
-            x: "bus",
-            y: 55,
-          },
-          {
-            x: "car",
-            y: 232,
-          },
-          {
-            x: "moto",
-            y: 161,
-          },
-          {
-            x: "bicycle",
-            y: 119,
-          },
-          {
-            x: "horse",
-            y: 128,
-          },
-          {
-            x: "skateboard",
-            y: 12,
-          },
-          {
-            x: "others",
-            y: 247,
+            x: "Fish",
+            y: 206,
           },
         ],
       },
       {
-        id: "india",
+        id: "Combini",
         data: [
           {
-            x: "plane",
-            y: 11,
+            x: "Vegetables",
+            y: 1,
           },
           {
-            x: "helicopter",
-            y: 260,
+            x: "Fruits",
+            y: 94,
           },
           {
-            x: "boat",
-            y: 206,
+            x: "Meat",
+            y: 195,
           },
           {
-            x: "train",
-            y: 43,
+            x: "Fish",
+            y: 41,
+          },
+        ],
+      },
+      {
+        id: "Online",
+        data: [
+          {
+            x: "Vegetables",
+            y: 140,
           },
           {
-            x: "subway",
-            y: 15,
+            x: "Fruits",
+            y: 237,
           },
           {
-            x: "bus",
-            y: 287,
+            x: "Meat",
+            y: 262,
           },
           {
-            x: "car",
-            y: 100,
-          },
-          {
-            x: "moto",
-            y: 98,
-          },
-          {
-            x: "bicycle",
-            y: 51,
-          },
-          {
-            x: "horse",
-            y: 279,
-          },
-          {
-            x: "skateboard",
-            y: 135,
-          },
-          {
-            x: "others",
-            y: 264,
+            x: "Fish",
+            y: 36,
           },
         ],
       },
     ]);
-    setFinalData([{ id: "", data: [{ x: "", y: "" }] }]);
+    setFinalData([{ id: "", data: [{ x: "", y: null }] }]);
   };
 
   return (
@@ -266,8 +228,9 @@ const LinechartData = ({ createData, setData, finalData, setFinalData }) => {
                                                           inputChangeIndexForY
                                                             ? {
                                                                 ...input,
-                                                                y: e.target
-                                                                  .value,
+                                                                y: Number(
+                                                                  e.target.value
+                                                                ),
                                                               }
                                                             : { ...input }
                                                       ),
@@ -302,7 +265,7 @@ const LinechartData = ({ createData, setData, finalData, setFinalData }) => {
                                     ...singleData,
                                     data: [
                                       ...singleData.data,
-                                      { x: "", y: "" },
+                                      { x: "", y: null },
                                     ],
                                   }
                                 : singleData
@@ -328,7 +291,7 @@ const LinechartData = ({ createData, setData, finalData, setFinalData }) => {
                 onClick={() => {
                   setFinalData([
                     ...finalData,
-                    { id: null, data: [{ x: "", y: "" }] },
+                    { id: null, data: [{ x: "", y: null }] },
                   ]);
                 }}
               >
@@ -364,4 +327,4 @@ const LinechartData = ({ createData, setData, finalData, setFinalData }) => {
   );
 };
 
-export default LinechartData;
+export default RadialBarChartData;

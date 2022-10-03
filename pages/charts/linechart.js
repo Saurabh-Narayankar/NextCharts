@@ -241,7 +241,7 @@ const LineChart = () => {
           />
         </Flex>
       </Flex>
-      <LineChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} createData={createData} finalData={finalData} setFinalData={setFinalData} />
+      <LineChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} setData={setData} createData={createData} finalData={finalData} setFinalData={setFinalData} />
     </>
     )
 }
