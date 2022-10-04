@@ -103,7 +103,7 @@ const ChartsDrawer = () => {
               >
                 RadialBar-Chart
               </Button></Link>
-              <Button
+              <Link href="/charts/bumpChart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -113,8 +113,8 @@ const ChartsDrawer = () => {
                 _hover={{ bgColor: "#35285E" }}
                 _active={{ bgColor: "#12092D" }}
               >
-                hello
-              </Button>
+                Bump-Chart
+              </Button></Link>
               <Button
                 marginBottom="5"
                 fontSize="xl"

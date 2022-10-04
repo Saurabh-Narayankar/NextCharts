@@ -1,9 +1,7 @@
 import { Text, Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
-import AreaBumpCustomisation from "./areabumpchart-CustomisationTab";
-import AreaBumpGridAndAxes from "./areabumpchart-GridAndAxesTab";
-import AreaBumpChartData from "./areabumpchart-IngestDataTab";
+import BumpChartData from "./bumpChart-ingestDataTab";
 
-const AreaBumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, setFinalData, setData }) => {
+const BumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, setFinalData, setData }) => {
     return(
         <Box width="100%" bgColor="blackAlpha.900">
         {/* empty box for styling and spacing between CHART and CUSTOMIZATIONS */}
@@ -41,19 +39,19 @@ const AreaBumpChartFunctions = ({ setValue, setBooleanValue, createData, finalDa
           <TabPanels>
             {/* TabList for Ingest Data */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">
-              <AreaBumpChartData createData={createData} finalData={finalData} setFinalData={setFinalData} setData={setData} />
+              <BumpChartData createData={createData} finalData={finalData} setFinalData={setFinalData} setData={setData} />
             </TabPanel>
             {/* End of TabList for Ingest Data */}
   
             {/* TabList for Grid and Axes */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">           
-            <AreaBumpGridAndAxes setValue={setValue} setBooleanValue={setBooleanValue} />                       
+                <p>two</p>                       
             </TabPanel>
             {/* End of TabList for Grid and Axes */}
   
             {/* TabList for Customisation */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">
-              <AreaBumpCustomisation setValue={setValue} />
+                <p>three</p>
             </TabPanel>
             {/* End of TabList for Customisation */}
           </TabPanels>
@@ -64,4 +62,4 @@ const AreaBumpChartFunctions = ({ setValue, setBooleanValue, createData, finalDa
     )
 }
 
-export default AreaBumpChartFunctions;
+export default BumpChartFunctions;

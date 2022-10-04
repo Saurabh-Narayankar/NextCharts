@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Text, Flex } from '@chakra-ui/react'
 import { ResponsiveAreaBump } from '@nivo/bump'
-import BumpChartFunctions from '../../components/charts/areabumpchart/areabumpchart-Component'
+import AreaBumpChartFunctions from '../../components/charts/areabumpchart/areabumpchart-Component'
 
 const AreaBumpChart = () => {
 
-    const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', spacing: 0, xPadding: 0.6, interpolation: 'smooth', colors: 'nivo', fieldOpacity: 0.8, borderWidth: 1, borderOpacity: 1,})
-    const [finalData, setFinalData] = useState([{id: '', data: [{x: null, y: null}]}])
-    const [data, setData] = useState([
+  const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', spacing: 0, xPadding: 0.6, interpolation: 'smooth',colors: 'nivo', fieldOpacity: 0.8, borderWidth: 1, borderOpacity: 1,})
+  const [finalData, setFinalData] = useState([{id: '', data: [{x: null, y: null}]}])
+  const [data, setData] = useState([
         {
           id: "JavaScript",
           data: [
@@ -66,15 +66,15 @@ const AreaBumpChart = () => {
             }
           ]
         }, 
-    ])
+  ])
 
 
-    const createData = () => {
+  const createData = () => {
         setData(finalData);
-    };
+  };
 
       
-    const setValue = (attr, e) => {
+  const setValue = (attr, e) => {
         if (e.target) {
           setDyValues({
             ...dyValues,
@@ -86,15 +86,15 @@ const AreaBumpChart = () => {
             [attr]: e,
           });
         }
-    };
+  };
 
     
-    const setBooleanValue = (attr) => {
+  const setBooleanValue = (attr) => {
         setDyValues({
           ...dyValues,
           [attr]: !dyValues[attr],
         });
-    };
+  };
 
 
 
@@ -174,7 +174,7 @@ const AreaBumpChart = () => {
         />
         </Flex>
       </Flex>
-      <BumpChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} finalData={finalData} setFinalData={setFinalData} createData={createData} setData={setData} />
+      <AreaBumpChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} finalData={finalData} setFinalData={setFinalData} createData={createData} setData={setData} />
     </>
     )
 }

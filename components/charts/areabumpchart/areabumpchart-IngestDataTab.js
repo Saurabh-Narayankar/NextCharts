@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
 
-const BumpChartData = ({ createData, finalData, setFinalData, setData }) => {
+const AreaBumpChartData = ({ createData, finalData, setFinalData, setData }) => {
   
   const removeData = () => {
     setData([
@@ -318,4 +318,4 @@ const BumpChartData = ({ createData, finalData, setFinalData, setData }) => {
   );
 };
 
-export default BumpChartData;
+export default AreaBumpChartData;
