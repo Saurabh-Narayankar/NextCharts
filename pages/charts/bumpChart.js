@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box, Heading } from "@chakra-ui/react";
 import { ResponsiveBump } from '@nivo/bump'
-import BumpChartFunctions from "../../components/charts/bumpchart/bumpChartFunctions";
+import BumpChartFunctions from "../../components/charts/bumpChart/bumpChartFunctions";
 
 const BumpChart = () => {
 
-    const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', spacing: 0, xPadding: 0.6, interpolation: 'smooth', colors: 'nivo', fieldOpacity: 0.8, borderWidth: 1, borderOpacity: 1,})
+    const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', pointSize: 10, xPadding: 0.6, interpolation: 'smooth', colors: 'nivo', opacity: 1, pointBorderWidth: 3, lineWidth: 2, gridX: true, gridY: true})
     const [finalData, setFinalData] = useState([{id: '', data: [{x: '', y: null}]}])
     const [data, setData] = useState([
         {
@@ -139,6 +139,9 @@ const BumpChart = () => {
 
     return(
         <>
+      <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
+        <Heading color='white'>BUMP CHART</Heading>
+      </Flex>
       <Flex
         height="65vh"
         padding="15px"
@@ -154,31 +157,36 @@ const BumpChart = () => {
         >
         <ResponsiveBump
         data={data}
+        xPadding={dyValues.xPadding}
         theme={{textColor: '#FFFFFF'}}
-        colors={{ scheme: 'nivo' }}
-        lineWidth={3}
+        colors={{ scheme: dyValues.colors }}
+        lineWidth={dyValues.lineWidth}
         activeLineWidth={6}
+        opacity={dyValues.opacity}
         inactiveLineWidth={3}
+        interpolation = {dyValues.interpolation}
         inactiveOpacity={0.15}
-        pointSize={10}
+        pointSize={dyValues.pointSize}
         activePointSize={16}
         inactivePointSize={0}
         pointColor={{ theme: 'background' }}
-        pointBorderWidth={3}
+        pointBorderWidth={dyValues.pointBorderWidth}
         activePointBorderWidth={3}
         pointBorderColor={{ from: 'serie.color' }}
+        enableGridX={dyValues.gridX}
+        enableGridY={dyValues.gridY}
         axisTop={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: '',
+            tickSize: dyValues.tickSizeX,
+            tickPadding: dyValues.tickPaddingX,
+            tickRotation: dyValues.tickRotationX,
+            legend: dyValues.legendXAxis,
             legendPosition: 'middle',
             legendOffset: -36
         }}
         axisBottom={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
+            tickSize: dyValues.tickSizeX,
+            tickPadding: dyValues.tickPaddingX,
+            tickRotation: dyValues.tickRotationX,
             legend: '',
             legendPosition: 'middle',
             legendOffset: 32

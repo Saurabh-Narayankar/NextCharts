@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Text, Flex } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react'
 import { ResponsiveAreaBump } from '@nivo/bump'
-import AreaBumpChartFunctions from '../../components/charts/areabumpchart/areabumpchart-Component'
+import AreaBumpChartFunctions from '../../components/charts/areaBumpChart/areabumpchartFunctions'
 
 const AreaBumpChart = () => {
 
@@ -100,6 +100,9 @@ const AreaBumpChart = () => {
 
     return(
         <>
+        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
+        <Heading color='white'>AREA-BUMP CHART</Heading>
+      </Flex>
       <Flex
         height="65vh"
         padding="15px"

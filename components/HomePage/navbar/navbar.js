@@ -8,7 +8,7 @@ const Navbar = () => {
 
 
   return (
-    <Box width="100%" bgColor="purple.500" borderBottom='1px solid #353535'>
+      <Box width="100%" bgColor="purple.500" borderBottom='1px solid #353535'>
       <Flex
         flexDirection="row"
         px='10'
@@ -22,11 +22,7 @@ const Navbar = () => {
           fontSize={["26px", "24px", "35px", "45px", '50px']}
           fontWeight="bold"
           color='white'
-          _hover={{ cursor: 'pointer'}}
-          
-
-          
-          
+          _hover={{ cursor: 'pointer'}} 
         >
           NextCharts
         </Text></Link>

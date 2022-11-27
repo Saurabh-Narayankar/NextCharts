@@ -1,4 +1,6 @@
 import { Text, Box, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import BumpCustomisation from "./bumpChart-CustomisationTab";
+import BumpGridAndAxes from "./bumpChart-gridAndAxesTab";
 import BumpChartData from "./bumpChart-ingestDataTab";
 
 const BumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, setFinalData, setData }) => {
@@ -14,6 +16,7 @@ const BumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, 
           variant='enclosed-colored'
           color="white"
           bgColor="blackAlpha.900"
+
         >
           <TabList border='2px solid #593AA5'>
             <Tab
@@ -45,13 +48,13 @@ const BumpChartFunctions = ({ setValue, setBooleanValue, createData, finalData, 
   
             {/* TabList for Grid and Axes */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">           
-                <p>two</p>                       
+                <BumpGridAndAxes setValue={setValue} setBooleanValue={setBooleanValue} />                       
             </TabPanel>
             {/* End of TabList for Grid and Axes */}
   
             {/* TabList for Customisation */}
             <TabPanel bgColor="#140936" borderBottomRadius="8px">
-                <p>three</p>
+                <BumpCustomisation setValue={setValue} />
             </TabPanel>
             {/* End of TabList for Customisation */}
           </TabPanels>

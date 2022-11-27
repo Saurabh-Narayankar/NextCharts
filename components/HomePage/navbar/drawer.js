@@ -54,7 +54,20 @@ const ChartsDrawer = () => {
           <DrawerBody>
             
             <Flex flexDirection="column">
-            <Link href="/charts/linechart">
+              <Link href="/charts/pieChart">
+              <Button
+                marginBottom="5"
+                fontSize="xl"
+                variant="outline"
+                paddingTop="7"
+                paddingBottom="7"
+                color="white"
+                _hover={{ bgColor: "#35285E" }}
+                _active={{ bgColor: "#12092D" }}
+              >
+                Pie-Chart
+              </Button></Link>
+            <Link href="/charts/lineChart">
               <Button
                 marginBottom="5"
                 fontSize="xl"
@@ -67,7 +80,7 @@ const ChartsDrawer = () => {
               >
                 Line-Chart
               </Button></Link>
-              <Link href="/charts/funnelchart"><Button
+              <Link href="/charts/funnelChart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -79,7 +92,7 @@ const ChartsDrawer = () => {
               >
                 Funnel-Chart
               </Button></Link>
-              <Link href="/charts/areabumpchart"><Button
+              <Link href="/charts/areaBumpChart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -91,7 +104,7 @@ const ChartsDrawer = () => {
               >
                 AreaBump-Chart
               </Button></Link>
-              <Link href="/charts/radialbarchart"><Button
+              <Link href="/charts/radialBarChart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -115,18 +128,6 @@ const ChartsDrawer = () => {
               >
                 Bump-Chart
               </Button></Link>
-              <Button
-                marginBottom="5"
-                fontSize="xl"
-                variant="outline"
-                paddingTop="7"
-                paddingBottom="7"
-                color="white"
-                _hover={{ bgColor: "#35285E" }}
-                _active={{ bgColor: "#12092D" }}
-              >
-                hello
-              </Button>
             </Flex>
             
           </DrawerBody>

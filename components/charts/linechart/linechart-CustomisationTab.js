@@ -301,7 +301,7 @@ const LinechartCustomisation = ({ setValue, setBooleanValue }) => {
                   size="lg"
                   onChange={() => setBooleanValue("points")}
                 >
-                  <Text fontSize={["sm", "md", "lg"]}>Points</Text>
+                <Text fontSize={["sm", "md", "lg"]}>Points</Text>
                 </Checkbox>
                 <Flex
                   flexDirection="column"

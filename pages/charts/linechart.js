@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
-import LineChartFunctions from "../../components/charts/linechart/linechart-Component";
-import { Text, Flex } from "@chakra-ui/react";
+import LineChartFunctions from "../../components/charts/lineChart/linechart-Component";
+import { Flex, Heading } from "@chakra-ui/react";
 
 
 const LineChart = () => {
@@ -149,6 +149,9 @@ const LineChart = () => {
 
     return(
         <>
+        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
+        <Heading color='white'>LINE CHART</Heading>
+      </Flex>
       <Flex
         height="65vh"
         padding="15px"

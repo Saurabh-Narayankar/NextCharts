@@ -1,4 +1,4 @@
-import { Text, Flex } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import { ResponsiveRadialBar } from '@nivo/radial-bar'
 import { useState } from "react";
 import RadialbarFunctions from "../../components/charts/radialBarChart/radialBarFunctions";
@@ -102,6 +102,9 @@ const RadialBarChart = () => {
 
     return(
         <>
+        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
+          <Heading color='white'>RADIAL-BAR CHART</Heading>
+        </Flex>
         <Flex
         height="65vh"
         paddingX='10px'

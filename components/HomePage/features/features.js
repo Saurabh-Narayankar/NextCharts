@@ -153,7 +153,7 @@ const FeatureSec = () => {
               <Heading textAlign="left" size="xl" my="3" color="purple.500">
                 Customise <ArrowForwardIcon />
               </Heading>
-              Every chart comes with it ' s own set of customisations. Customise
+              Every chart comes with its own set of customisations. Customise
               as much as you like.
             </Box>
           </Flex>

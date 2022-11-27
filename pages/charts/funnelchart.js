@@ -1,14 +1,13 @@
-import { Text, Flex } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import { ResponsiveFunnel } from "@nivo/funnel";
 import { useState } from "react";
-import FunnelChartFunctions from "../../components/charts/funnelchart/funnelchart-Component";
+import FunnelChartFunctions from "../../components/charts/funnelChart/funnelChartFunctions";
 
 
 
 const FunnelChart = () => {
 
   const [dyValues, setDyValues] = useState({colors: 'spectral', spacing: 0, shape: 0.66, opacity: 1, borderWidth: 6, label: true, chartInterpolation: 'smooth', chartDirection: 'vertical'})
-
   const [finalData, setFinalData] = useState([{id: '', value: '', label: ''}])
   const [data, setData] = useState([
     {
@@ -62,6 +61,9 @@ const FunnelChart = () => {
 
   return (
     <>
+    <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
+        <Heading color='white'>FUNNEL CHART</Heading>
+      </Flex>
       <Flex
         height="65vh"
         paddingX='10px'

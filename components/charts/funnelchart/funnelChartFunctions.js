@@ -57,8 +57,6 @@ const FunnelChartFunctions = ({ setValue, setData, createData, finalData, setFin
     setFinalData([{id: '', value: '', label: ''}])
   };
 
-  console.log(finalData)
-
   return (
     <Box width="100%" bgColor="blackAlpha.900">
       <Box width="100%" paddingBottom="20px" bgColor="blackAlpha.900"></Box>
@@ -216,7 +214,7 @@ const FunnelChartFunctions = ({ setValue, setData, createData, finalData, setFin
           </Button>
         </Flex>
       </Flex>
-          </TabPanel>
+      </TabPanel>
 
 
 
