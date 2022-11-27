@@ -1,10 +1,14 @@
-import { useState } from 'react'
-import { Flex, Heading } from '@chakra-ui/react'
+import { useState, useRef } from 'react'
+import download from 'downloadjs'
+import * as htmlToImage from 'html-to-image'
+import { Flex, Heading, Menu, MenuButton, MenuList, MenuItem, Text } from '@chakra-ui/react'
 import { ResponsiveAreaBump } from '@nivo/bump'
 import AreaBumpChartFunctions from '../../components/charts/areaBumpChart/areabumpchartFunctions'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const AreaBumpChart = () => {
 
+  const chartReference = useRef(null)
   const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', spacing: 0, xPadding: 0.6, interpolation: 'smooth',colors: 'nivo', fieldOpacity: 0.8, borderWidth: 1, borderOpacity: 1,})
   const [finalData, setFinalData] = useState([{id: '', data: [{x: null, y: null}]}])
   const [data, setData] = useState([
@@ -97,12 +101,55 @@ const AreaBumpChart = () => {
   };
 
 
+  const generateSVG = () => {
+    const htmlNode = chartReference.current;
+    htmlToImage
+      .toSvg(htmlNode)
+      .then((data) => {
+        download(data, "Chart.svg");
+      })
+      .catch((error) => {
+        console.error("Something went wrong", error);
+      });
+  };
+
+
+  const generatePNG = () => {
+    const htmlNode = chartReference.current;
+    htmlToImage
+      .toPng(htmlNode)
+      .then((data) => {
+        download(data, "Chart.png");
+      })
+      .catch((error) => {
+        console.error("Something went wrong", error);
+      });
+  };
+
+
 
     return(
         <>
-        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
-        <Heading color='white'>AREA-BUMP CHART</Heading>
-      </Flex>
+        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" px='10' wrap='wrap' justifyContent='space-between' alignItems='center'>
+        <Heading color='white'>Area-Bump Chart</Heading>
+        <Menu>
+          <MenuButton px={4}
+            py={2}
+            size={["xs", "sm", "md", "lg"]}
+            transition='all 0.2s'
+            borderRadius='md'
+            bgGradient='linear(to-r, purple.400, purple.600)'
+            _hover={{ bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            _expanded={{  bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            >
+            <Text color='white'>Download <ChevronDownIcon color='white' /></Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={(e) => generateSVG(e.target.value)}>SVG Format</MenuItem>
+            <MenuItem onClick={(e) => generatePNG(e.target.value)}>PNG Format</MenuItem>
+          </MenuList>
+        </Menu>
+        </Flex>
       <Flex
         height="65vh"
         padding="15px"
@@ -110,15 +157,15 @@ const AreaBumpChart = () => {
         overflowX='auto'
         bgColor='black'
       >
+        <div ref={chartReference}>
         <Flex
           height="57vh"
           width={{ base: 1450, lg: "98vw" }}
           alignItems ='center'
-          bgColor='blackAlpha.900'
         >
         <ResponsiveAreaBump
         data={data}
-        theme={{textColor: "#ffffff"}}
+        theme={{textColor: "#808080"}}
         margin={{ top: 40, right: 100, bottom: 40, left: 100 }}
         spacing={dyValues.spacing}
         colors={{ scheme: dyValues.colors }}
@@ -176,6 +223,7 @@ const AreaBumpChart = () => {
         }}
         />
         </Flex>
+        </div>  
       </Flex>
       <AreaBumpChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} finalData={finalData} setFinalData={setFinalData} createData={createData} setData={setData} />
     </>

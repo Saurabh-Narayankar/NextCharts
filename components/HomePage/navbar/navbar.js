@@ -8,7 +8,7 @@ const Navbar = () => {
 
 
   return (
-      <Box width="100%" bgColor="purple.500" borderBottom='1px solid #353535'>
+      <Box width="100%" bgColor="purple.500" borderBottom='3px solid #353535'>
       <Flex
         flexDirection="row"
         px='10'
@@ -29,17 +29,6 @@ const Navbar = () => {
         <Flex flexDirection="row" flexWrap="wrap">
           <Stack direction={["column", "row"]} spacing="4">
             <ContactModal />
-            <Button
-              size={["xs", "sm", "md", "lg"]}
-              variant="ghost"
-              color="whiteAlpha.900"
-              _hover={{ bg: '#ebedf0', color: 'purple.900' }}
-              _active={{
-                bg: 'whiteAlpha.600',
-              }}
-            >
-              About
-            </Button>
             <ChartsDrawer />
           </Stack>
         </Flex>

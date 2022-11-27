@@ -1,10 +1,14 @@
-import { useState } from 'react'
-import { Flex, Box, Heading } from "@chakra-ui/react";
+import { useState, useRef } from 'react'
+import download from 'downloadjs'
+import * as htmlToImage from 'html-to-image'
+import { Flex, Text, Heading, Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ResponsiveBump } from '@nivo/bump'
 import BumpChartFunctions from "../../components/charts/bumpChart/bumpChartFunctions";
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const BumpChart = () => {
 
+    const chartReference = useRef(null)
     const [dyValues, setDyValues] = useState({tickSizeX: 8, tickPaddingX: 8, tickRotationX: 0, legendXAxis: '', pointSize: 10, xPadding: 0.6, interpolation: 'smooth', colors: 'nivo', opacity: 1, pointBorderWidth: 3, lineWidth: 2, gridX: true, gridY: true})
     const [finalData, setFinalData] = useState([{id: '', data: [{x: '', y: null}]}])
     const [data, setData] = useState([
@@ -137,10 +141,51 @@ const BumpChart = () => {
         });
   };
 
+  const generateSVG = () => {
+    const htmlNode = chartReference.current;
+    htmlToImage
+      .toSvg(htmlNode)
+      .then((data) => {
+        download(data, "Chart.svg");
+      })
+      .catch((error) => {
+        console.error("Something went wrong", error);
+      });
+  };
+
+  const generatePNG = () => {
+    const htmlNode = chartReference.current;
+    htmlToImage
+      .toPng(htmlNode)
+      .then((data) => {
+        download(data, "Chart.png");
+      })
+      .catch((error) => {
+        console.error("Something went wrong", error);
+      });
+  };
+
     return(
         <>
-      <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
-        <Heading color='white'>BUMP CHART</Heading>
+      <Flex bgColor="blackAlpha.900" width="100%" height="4rem" px='10' wrap='wrap' justifyContent='space-between' alignItems='center'>
+        <Heading color='white'>Bump Chart</Heading>
+        <Menu>
+          <MenuButton px={4}
+            py={2}
+            size={["xs", "sm", "md", "lg"]}
+            transition='all 0.2s'
+            borderRadius='md'
+            bgGradient='linear(to-r, purple.400, purple.600)'
+            _hover={{ bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            _expanded={{  bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            >
+            <Text color='white'>Download <ChevronDownIcon color='white' /></Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={(e) => generateSVG(e.target.value)}>SVG Format</MenuItem>
+            <MenuItem onClick={(e) => generatePNG(e.target.value)}>PNG Format</MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
       <Flex
         height="65vh"
@@ -149,16 +194,16 @@ const BumpChart = () => {
         overflowX='auto'
         bgColor='black'
       >
+        <div ref={chartReference}>
         <Flex
           height="57vh"
           width={{ base: 1450, lg: "98vw" }}
           alignItems ='center'
-          bgColor='blackAlpha.900'
         >
         <ResponsiveBump
         data={data}
         xPadding={dyValues.xPadding}
-        theme={{textColor: '#FFFFFF'}}
+        theme={{textColor: '#808080'}}
         colors={{ scheme: dyValues.colors }}
         lineWidth={dyValues.lineWidth}
         activeLineWidth={6}
@@ -203,6 +248,7 @@ const BumpChart = () => {
         axisRight={null}
     />
         </Flex>
+        </div>
       </Flex>
       <BumpChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} finalData={finalData} setFinalData={setFinalData} createData={createData} setData={setData} />
     </>

@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from 'react'
+import download from 'downloadjs'
+import * as htmlToImage from 'html-to-image'
+import { Flex, Text, Heading, Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ResponsiveLine } from "@nivo/line";
 import LineChartFunctions from "../../components/charts/lineChart/linechart-Component";
-import { Flex, Heading } from "@chakra-ui/react";
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 
 const LineChart = () => {
 
+    const chartReference = useRef(null)
     const [dyValues, setDyValues] = useState({ curve: 'natural', colors: 'nivo', legendXAxis: '', legendYAxis: '', axisBottom: true, axisLeft: true, gridX: true, gridY: true, TickSizeX: 8, TickPaddingX: 8, TickSizeY: 5, TickPaddingY: 5, TickRotationX: 0, TickRotationY: 0, lineWidth: 2, Area: false, areaOpacity: 0.20, points: false, pointSize: 10, pointBorderWidth: 2, pointLabel: false, pointLabelYOffset: -12 })
 
     const [finalData, setFinalData] = useState([{id: '', data: [{x: '', y: ''}]}])
@@ -145,12 +149,53 @@ const LineChart = () => {
     const createData = () => {
         setData(finalData);
       };
+
+      const generateSVG = () => {
+        const htmlNode = chartReference.current;
+        htmlToImage
+          .toSvg(htmlNode)
+          .then((data) => {
+            download(data, "Chart.svg");
+          })
+          .catch((error) => {
+            console.error("Something went wrong", error);
+          });
+      };
+    
+      const generatePNG = () => {
+        const htmlNode = chartReference.current;
+        htmlToImage
+          .toPng(htmlNode)
+          .then((data) => {
+            download(data, "Chart.png");
+          })
+          .catch((error) => {
+            console.error("Something went wrong", error);
+          });
+      };
     
 
     return(
         <>
-        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" justifyContent='center' alignItems='center'>
-        <Heading color='white'>LINE CHART</Heading>
+        <Flex bgColor="blackAlpha.900" width="100%" height="4rem" px='10' wrap='wrap' justifyContent='space-between' alignItems='center'>
+        <Heading color='white'>Line Chart</Heading>
+        <Menu>
+          <MenuButton px={4}
+            py={2}
+            size={["xs", "sm", "md", "lg"]}
+            transition='all 0.2s'
+            borderRadius='md'
+            bgGradient='linear(to-r, purple.400, purple.600)'
+            _hover={{ bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            _expanded={{  bgGradient: "linear(to-r, purple.500, purple.800)", }}
+            >
+            <Text color='white'>Download <ChevronDownIcon color='white' /></Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={(e) => generateSVG(e.target.value)}>SVG Format</MenuItem>
+            <MenuItem onClick={(e) => generatePNG(e.target.value)}>PNG Format</MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
       <Flex
         height="65vh"
@@ -159,15 +204,15 @@ const LineChart = () => {
         overflowX='auto'
         bgColor='black'
       >
+        <div ref={chartReference}>
         <Flex
           height="57vh"
           width={{ base: 1450, lg: "98vw" }}
           alignItems ='center'
-          bgColor='blackAlpha.900'
         >
           <ResponsiveLine
             data={data}
-            theme={{ textColor: "#ffffff" }}
+            theme={{ textColor: "#808080" }}
             margin={{ top: 50, right: 110, bottom: 60, left: 70 }}
             xScale={{ type: "point" }}
             yScale={{
@@ -243,6 +288,7 @@ const LineChart = () => {
             ]}
           />
         </Flex>
+        </div>
       </Flex>
       <LineChartFunctions setValue={setValue} setBooleanValue={setBooleanValue} setData={setData} createData={createData} finalData={finalData} setFinalData={setFinalData} />
     </>
