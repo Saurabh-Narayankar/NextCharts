@@ -3,7 +3,7 @@ import download from 'downloadjs'
 import * as htmlToImage from 'html-to-image'
 import { Flex, Text, Heading, Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ResponsiveFunnel } from "@nivo/funnel";
-import FunnelChartFunctions from "../../components/charts/funnelChart/funnelChartFunctions";
+import FunnelChartFunctions from "../../components/charts/funnelchart/funnelChartFunctions";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 
