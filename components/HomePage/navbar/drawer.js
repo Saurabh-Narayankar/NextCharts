@@ -67,7 +67,7 @@ const ChartsDrawer = () => {
               >
                 Pie-Chart
               </Button></Link>
-            <Link href="/charts/lineChart">
+            <Link href="/charts/linechart">
               <Button
                 marginBottom="5"
                 fontSize="xl"
@@ -80,7 +80,7 @@ const ChartsDrawer = () => {
               >
                 Line-Chart
               </Button></Link>
-              <Link href="/charts/funnelChart"><Button
+              <Link href="/charts/funnelchart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -92,7 +92,7 @@ const ChartsDrawer = () => {
               >
                 Funnel-Chart
               </Button></Link>
-              <Link href="/charts/areaBumpChart"><Button
+              <Link href="/charts/areabumpchart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
@@ -104,7 +104,7 @@ const ChartsDrawer = () => {
               >
                 AreaBump-Chart
               </Button></Link>
-              <Link href="/charts/radialBarChart"><Button
+              <Link href="/charts/radialbarchart"><Button
                 marginBottom="5"
                 fontSize="xl"
                 variant="outline"
