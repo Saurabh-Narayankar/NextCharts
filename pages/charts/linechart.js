@@ -3,7 +3,7 @@ import download from 'downloadjs'
 import * as htmlToImage from 'html-to-image'
 import { Flex, Text, Heading, Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ResponsiveLine } from "@nivo/line";
-import LineChartFunctions from "../../components/charts/lineChart/linechart-Component";
+import LineChartFunctions from "../../components/charts/linechart/linechart-Component";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 
