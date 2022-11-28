@@ -1,6 +1,5 @@
 import { Text, Flex, Box, Button, Stack } from "@chakra-ui/react";
 import Link from "next/link";
-import ContactModal from "../navbar/contact";
 import ChartsDrawer from "./drawer";
 
 const Navbar = () => {
@@ -28,7 +27,6 @@ const Navbar = () => {
         </Text></Link>
         <Flex flexDirection="row" flexWrap="wrap">
           <Stack direction={["column", "row"]} spacing="4">
-            <ContactModal />
             <ChartsDrawer />
           </Stack>
         </Flex>
