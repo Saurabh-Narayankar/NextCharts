@@ -17,7 +17,7 @@ const Charts = () => {
       </Box>
       <Box
         width="100%"
-        height="100vh"
+        height="2000px"
         bgColor="blackAlpha.900"
         paddingBottom="350px"
       >
