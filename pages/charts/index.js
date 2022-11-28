@@ -52,7 +52,7 @@ const Charts = () => {
             Pie charts are often used to represent sample data—with data points belonging to a combination of different categories. Each of these categories “slice of the pie.”
           </Box>
           </Link>
-          <Link href="/charts/lineChart">
+          <Link href="/charts/linechart">
             <Box
               as="article"
               maxW="sm"
@@ -77,7 +77,7 @@ const Charts = () => {
               two parameters.
             </Box>
           </Link>
-          <Link href='/charts/funnelChart'>
+          <Link href='/charts/funnelchart'>
           <Box
             as="article"
             maxW="sm"
@@ -101,7 +101,7 @@ const Charts = () => {
             A funnel chart helps you visualize a linear process that has continuous, connected stages.
           </Box>
           </Link>
-          <Link href='/charts/areaBumpChart'>
+          <Link href='/charts/areabumpchart'>
           <Box
             as="article"
             maxW="sm"
@@ -125,7 +125,7 @@ const Charts = () => {
             A Area Bump Chart is similar to bump chart but it is used when the X & Y coordinated are in Numbers eg :- <div>(x - year, y - rank in that year)</div>
           </Box>
           </Link>
-          <Link href='/charts/radialBarChart'>
+          <Link href='/charts/radialbarchart'>
           <Box
             as="article"
             maxW="sm"
