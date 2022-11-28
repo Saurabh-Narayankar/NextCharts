@@ -3,7 +3,7 @@ import download from 'downloadjs'
 import * as htmlToImage from 'html-to-image'
 import { Flex, Text, Heading, Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ResponsiveBump } from '@nivo/bump'
-import BumpChartFunctions from "../../components/charts/bumpChart/bumpChartFunctions";
+import BumpChartFunctions from "../../components/charts/bumpchart/bumpChartFunctions";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const BumpChart = () => {
